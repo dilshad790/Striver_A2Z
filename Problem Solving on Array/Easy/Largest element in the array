@@ -1,1 +1,17 @@
 
+Solution1: Sorting
+Intuition:
+We can sort the array in ascending order, hence the largest element will be at the last index of the array. 
+
+Approach: 
+Sort the array in ascending order.
+Print the (size of the array -1)th index.
+
+Code:
+#include <bits/stdc++.h> 
+int largestElement(vector<int> &arr, int n) {
+    // Write your code here.
+    //  Brute Force Approach
+sort(arr.begin(),arr.end());
+return arr[arr.size()-1];
+}
