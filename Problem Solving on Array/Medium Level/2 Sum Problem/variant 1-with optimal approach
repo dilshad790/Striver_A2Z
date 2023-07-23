@@ -1,0 +1,51 @@
+Intitution :Using Two pointer method/Greedy method
+Aproach:
+sort the whole array in ascending order
+left var pointing to first element of an array and right var pointing to last element of an array.
+we add elemenet of right and left pointer if it is grater than target means hmlog ko sum ko krna hoga tb n target to achieve kr paenge.Kam krne ke lie right ko pichhe lana ni hoga.
+  suppose left ko aaage badha die to sum aur badh jaega isilie right ko pichhe lekr aarahe hai
+  if sum is less than target means sum ko badhana hoga uske lie left ko aage move krna hoga
+    Ek time per left >right ruk jao
+
+    Code:
+    #include <bits/stdc++.h>
+using namespace std;
+
+string twoSum(int n, vector<int> &arr, int target) {
+    sort(arr.begin(), arr.end());
+    int left = 0, right = n - 1;
+    while (left < right) {
+        int sum = arr[left] + arr[right];
+        if (sum == target) {
+            return "YES";
+        }
+        else if (sum < target) left++;
+        else right--;
+    }
+    return "NO";
+}
+
+int main()
+{
+    int n = 5;
+    vector<int> arr = {2, 6, 5, 8, 11};
+    int target = 14;
+    string ans = twoSum(n, arr, target);
+    cout << "This is the answer for variant 1: " << ans << endl;
+    return 0;
+}
+Output: This is the answer for variant 1: YES
+
+Note: For variant 2, we can store the elements of the array along with its index in a new array. Then the rest of the code will be similar. And while returning, we need to return the stored indices instead of returning “YES”. But for this variant, the recommended approach is approach 2 i.e. hashing approach.
+
+Time Complexity: O(N) + O(N*logN), where N = size of the array.
+Reason: The loop will run at most N times. And sorting the array will take N*logN time complexity.
+
+Space Complexity: O(1) as we are not using any extra space.
+
+Note: Here we are distorting the given array. So, if we need to consider this change, the space complexity will be O(N).
+
+Special thanks to Pranendu Bikash Pradhan and Sudip Ghosh and KRITIDIPTA GHOSH for contributing to this article on takeUforward. If you also wish to share your knowledge with the takeUforward fam, please check out this article.
+
+
+    
