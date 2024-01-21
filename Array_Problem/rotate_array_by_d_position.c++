@@ -32,7 +32,7 @@ int main() {
     cout<<"Enter the size of array:";
     int n;
     cin>>n;
-    cout<<"Enter element of array:"
+    cout<<"Enter element of array:";
     int a[n];
 
     for(int i=0; i<n; i++)
@@ -45,7 +45,6 @@ int main() {
     {
         cout<<a[i]<<" ";
     }
-
 
     return 0;
 }
